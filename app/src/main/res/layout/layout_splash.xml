@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_2b6695">
+    <TextView
+        android:id="@+id/tv_appname"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/cnblogs"
+        android:textSize="@dimen/textsize_28sp"
+        android:gravity="center_horizontal"
+        android:layout_centerInParent="true"
+        android:textColor="@color/white"
+        />
+    <TextView
+        android:id="@+id/tv_version"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_appname"
+        android:textColor="@color/white"
+        android:layout_marginTop="10dp"
+        android:gravity="center_horizontal"
+        android:textSize="@dimen/textsize_26sp"
+        android:text="V0.1"
+        />
+</RelativeLayout>

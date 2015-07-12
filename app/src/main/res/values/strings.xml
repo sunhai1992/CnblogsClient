@@ -1,6 +1,8 @@
 <resources>
-    <string name="app_name">CnblogsClient</string>
+    <string name="app_name">i博客园</string>
 
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+
+    <string name="cnblogs">博客园</string>
 </resources>
