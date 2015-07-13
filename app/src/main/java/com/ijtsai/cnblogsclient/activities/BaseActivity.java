@@ -6,8 +6,14 @@ import android.support.v7.widget.Toolbar;
 
 import com.ijtsai.cnblogsclient.R;
 
+import butterknife.Bind;
+import butterknife.ButterKnife;
+
 public class BaseActivity extends AppCompatActivity {
+
+    @Bind(R.id.toolbar)
     protected Toolbar mToolBar;
+
     protected int layoutResID = R.layout.activity_base;
 
     @Override
@@ -15,8 +21,7 @@ public class BaseActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         setContentView(layoutResID);
-
-        mToolBar = (Toolbar) findViewById(R.id.toolbar);
+        ButterKnife.bind(this);
         setSupportActionBar(mToolBar);
     }
 }
