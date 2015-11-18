@@ -44,9 +44,10 @@ public class SplashActivity extends AppCompatActivity {
         ObjectAnimator.ofFloat(mVersion, "alpha", 1f, 0.3f, 1f).setDuration(2000).start();
 
         AnimatorSet animatorSet = new AnimatorSet();
-        ObjectAnimator translationAnimator = ObjectAnimator.ofFloat(mAppName, "translationX", -mVersion.getWidth() / 2, 0f).setDuration(2000);
-        ObjectAnimator alphaAnimator = ObjectAnimator.ofFloat(mAppName, "alpha", 0f, 1f).setDuration(2000);
-        animatorSet.play(translationAnimator).with(alphaAnimator);
+        ObjectAnimator translationAnimator = ObjectAnimator.ofFloat(mAppName, "translationX", -mVersion.getWidth(), 0f,-mVersion.getWidth()/2,0f).setDuration(2000);
+        ObjectAnimator alphaAnimator = ObjectAnimator.ofFloat(mAppName, "alpha", 0f, 1f).setDuration(1000);
+        animatorSet.playTogether(translationAnimator, alphaAnimator);
+        animatorSet.start();
     }
 
     private void init() {

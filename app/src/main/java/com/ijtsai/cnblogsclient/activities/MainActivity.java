@@ -11,6 +11,9 @@ import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 
 import com.ijtsai.cnblogsclient.R;
+import com.ijtsai.cnblogsclient.adapter.MainFragmentPageAdapter;
+import com.ijtsai.cnblogsclient.adapter.PagerModelFactory;
+import com.ijtsai.cnblogsclient.fragments.BaseFragment;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -42,7 +45,7 @@ public class MainActivity extends BaseActivity {
     private void initView() {
         setSupportActionBar(mToolbar);
         setUpViewPager(mViewPager);
-//        mTabLayout.setupWithViewPager(mViewPager);
+        mTabLayout.setupWithViewPager(mViewPager);
 
         ActionBar actionBar = getSupportActionBar();
         if (actionBar != null) {
@@ -60,7 +63,12 @@ public class MainActivity extends BaseActivity {
     }
 
     private void setUpViewPager(ViewPager mViewPager) {
-        //TODO
-    }
+        PagerModelFactory factory = new PagerModelFactory();
+        factory.addFragment(new BaseFragment(), "首页");
+        factory.addFragment(new BaseFragment(), "新闻");
+        factory.addFragment(new BaseFragment(), "个人");
 
+        MainFragmentPageAdapter adapter = new MainFragmentPageAdapter(getSupportFragmentManager(), factory);
+        mViewPager.setAdapter(adapter);
+    }
 }
